@@ -4,23 +4,23 @@ localeTitle: Cambiar la declaración
 ---
 # Cambiar
 
-`Switch` es una declaración de selección que seleccionará una instrucción de cambio y la ejecutará desde la lista de candidatos. El interruptor consiste en un `case` y un `default` opcional. La ejecución se puede detener utilizando un `break` o `return` .
+`Switch` es una estructura de control de selección que seleccionará una instrucción de cambio y la ejecutará desde la lista de candidatos. El interruptor consiste en un `case` y un `default` opcional. La ejecución se puede detener utilizando un `break` o `return` .
 
 ## Sintaxis
 ```
 switch(x) 
  { 
-    case value1: 
-      //execute if x = value1 
+    case valor1: 
+      // se ejecuta si x = valor1 
       break; 
     case value2: 
-      //execute if x = value2 
+      // se ejecuta si x = valor2 
       break; 
  
     ... 
  
     default: 
-      execute if x is different with cases above 
+      se ejecuta si x es distinto a los valores candidatos
  } 
 ```
 
@@ -28,65 +28,68 @@ switch(x)
 
 ```php
 <?php 
- //initialize with a random integer within range 
- $diceNumber = mt_rand(1, 6); 
+ // inicializa una variable con un valor entero aleatorio en un rango
+ $valorDado = mt_rand(1, 6); 
  
- //initialize 
+ // inicializa una cadena vacía a la que luego asignaremos un valor 
  $numText = ""; 
  
- //calling switch statement 
-  switch($diceNumber) 
+ // llamada al switch
+  switch($valorDado) 
   { 
   case 1: 
-    $numText = "One"; 
+    $numText = "Uno"; 
     break; 
   case 2: 
-    $numText = "Two"; 
+    $numText = "Dos"; 
     break; 
   case 3: 
   case 4: 
     // case 3 and 4 will go to this line 
-    $numText = "Three or Four"; 
+    $numText = "Tres o Cuatro"; 
     break; 
   case 5: 
-    $numText = "Five"; 
+    $numText = "Cinco"; 
     echo $numText; 
-    // break; //without specify break or return it will continue execute to next case. 
+    // break; // sin especificar break o return continuará la ejecución al siguiente caso 
   case 6: 
-    $numText = "Six"; 
+    $numText = "Seis"; 
     echo $numText; 
     break; 
   default: 
-    $numText = "unknown"; 
+    $numText = "desconocido"; 
   } 
  
-  //display result 
-  echo 'Dice show number '.$numText.'.'; 
+  // resultado 
+  echo 'El dado muestra el número '.$numText.'.'; 
  
  ?> 
 ```
 
 ## Salida
 ```
-if case is 1 
- > Dice show number One. 
+si case es 1 
+ > El dado muestra el número Uno. 
  
- if case is 2 
- > Dice show number Two. 
+si case es 2 
+ > El dado muestra el número Dos. 
+
+si case es 3 
+ > El dado muestra el número Tres o Cuatro. 
  
- if case is 3 
- > Dice show number Three or Four. 
+si case es 4 
+ > El dado muestra el número Tres o Cuatro. 
  
- if case is 4 
- > Dice show number Three or Four. 
+si case es 5 
+ > CincoSeisEl dado muestra el número Seis. 
  
- if case is 5 
- > FiveSixDice show number Six. 
+si case es 6 
+ > SeisEl dado muestra el número Seis. 
  
- if case is 6 
- > SixDice show number Six. 
- 
- if none of the above 
- > Dice show number unknown. 
+si case no coincide con ningún valor
+ > El dado muestra el número desconocido. 
 
 ```
+
+## Más información:
+[PHP.net - Switch](https://secure.php.net/manual/es/control-structures.switch.php)
